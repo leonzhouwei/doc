@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<!-- saved from url=(0088)https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines -->
+<html lang="en" class="is-copy-enabled is-u2f-enabled cye-enabled cye-lm cye-lm-tag"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=1020">
+    
+    
+    <title>angular.js/CONTRIBUTING.md at master · angular/angular.js</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/apple-touch-icon-144.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="@github" name="twitter:site"><meta content="summary" name="twitter:card"><meta content="angular/angular.js" name="twitter:title"><meta content="angular.js - HTML enhanced for web apps" name="twitter:description"><meta content="https://avatars0.githubusercontent.com/u/139426?v=3&amp;s=400" name="twitter:image:src">
+      <meta content="GitHub" property="og:site_name"><meta content="object" property="og:type"><meta content="https://avatars0.githubusercontent.com/u/139426?v=3&amp;s=400" property="og:image"><meta content="angular/angular.js" property="og:title"><meta content="https://github.com/angular/angular.js" property="og:url"><meta content="angular.js - HTML enhanced for web apps" property="og:description">
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    <link rel="web-socket" href="wss://live.github.com/_sockets/MTI1OTYzNDo2ZDJkYzJhYTBhYTc3OWI2NjBlZGNjZjMxZWMzYWVmMzpjMDE2Nzg4OWVkNWU4NjBjMDFkMmE0ODRjNzZhN2Y4MjE4MTFmNTA0MmM0MzM3MTFmZDNjNWJlYjBmMWZkNzg1--00b5d86c5953ac07aeea4d2cbc5bfc35c6564b0d">
+    <meta name="pjax-timeout" content="1000">
+    <link rel="sudo-modal" href="https://github.com/sessions/sudo_modal">
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient="">
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host"><meta content="github" name="octolytics-app-id"><meta content="DE7EA235:23F8:39DCCE6:56935E88" name="octolytics-dimension-request_id"><meta content="1259634" name="octolytics-actor-id"><style id="nightModeStyle">
+html.cye-enabled.cye-nm:not(*:-webkit-full-screen-ancestor) body,
+ html.cye-enabled.cye-nm:not(*:-webkit-full-screen-ancestor) #cye-workaround-body {-webkit-filter:contrast(91%) brightness(84%) invert(1);}</style><style id="cyebody">html.cye-enabled.cye-lm body{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyediv">html.cye-enabled.cye-lm div{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyetable">html.cye-enabled.cye-lm th{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}html.cye-enabled.cye-lm td{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyetextInput">html.cye-enabled.cye-lm input[type=text]{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}html.cye-enabled.cye-lm textarea{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyeselect">html.cye-enabled.cye-lm select{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyeul">html.cye-enabled.cye-lm ul{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyeChangeByClick">html.cye-enabled.cye-lm .cye-lm-tag,html.cye-enabled.cye-lm.cye-lm-tag{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><meta content="leonzhouwei" name="octolytics-actor-login"><meta content="88424b22dac5791a8a35141e748df73062439102c02cb155baa786036cf478a9" name="octolytics-actor-hash">
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location">
+<meta content="Rails, view, blob#show" data-pjax-transient="true" name="analytics-event">
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+
+        <meta name="hostname" content="github.com">
+    <meta name="user-login" content="leonzhouwei">
+
+        <meta name="expected-hostname" content="github.com">
+
+      <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0">
+      <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+    <meta content="6b1533e9a3d60340ee8da8949c9b847e295698a1" name="form-nonce">
+
+    <link crossorigin="anonymous" href="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/github-2cd8e7b7c650541e94a142c9c10fb231b81455e1777c62510eb9b3402cc220b3.css" integrity="sha256-LNjnt8ZQVB6UoULJwQ+yMbgUVeF3fGJRDrmzQCzCILM=" media="all" rel="stylesheet">
+    <link crossorigin="anonymous" href="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/github2-ceee0e6040d1030b365b8e3d7b8253580a1b367dd5a04caac69de46b320ad095.css" integrity="sha256-zu4OYEDRAws2W449e4JTWAobNn3VoEyqxp3kazIK0JU=" media="all" rel="stylesheet">
+    
+    
+
+
+    <meta http-equiv="x-pjax-version" content="3fa31291a3392c21fe713562c40f1dcc">
+
+      
+  <meta name="description" content="angular.js - HTML enhanced for web apps">
+  <meta name="go-import" content="github.com/angular/angular.js git https://github.com/angular/angular.js.git">
+
+  <meta content="139426" name="octolytics-dimension-user_id"><meta content="angular" name="octolytics-dimension-user_login"><meta content="460078" name="octolytics-dimension-repository_id"><meta content="angular/angular.js" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="460078" name="octolytics-dimension-repository_network_root_id"><meta content="angular/angular.js" name="octolytics-dimension-repository_network_root_nwo">
+  <link href="https://github.com/angular/angular.js/commits/master.atom" rel="alternate" title="Recent Commits to angular.js:master" type="application/atom+xml">
+
+  <style type="text/css"></style></head>
+
+
+  <body class="logged_in   env-production linux vis-public page-blob cye-lm-tag">
+    <a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+
+    
+    
+    
+
+
+
+      <div class="header header-logged-in true" role="banner">
+  <div class="container clearfix">
+
+    <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+  <span aria-hidden="true" class="mega-octicon octicon-mark-github cye-lm-tag"></span>
+</a>
+
+
+      <div class="site-search repo-scope js-site-search" role="search">
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/angular/angular.js/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/angular/angular.js/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+  <label class="js-chromeless-input-container form-control">
+    <div class="scope-badge">This repository</div>
+    <input type="text" class="js-site-search-focus js-site-search-field is-clearable chromeless-input" data-hotkey="s" name="q" placeholder="Search" aria-label="Search this repository" data-global-scope-placeholder="Search GitHub" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off">
+  </label>
+</form>
+      </div>
+
+      <ul class="header-nav left" role="navigation">
+        <li class="header-nav-item">
+          <a href="https://github.com/pulls" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:pulls context:user" data-hotkey="g p" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls">
+            Pull requests
+</a>        </li>
+        <li class="header-nav-item">
+          <a href="https://github.com/issues" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:issues context:user" data-hotkey="g i" data-selected-links="/issues /issues/assigned /issues/mentioned /issues">
+            Issues
+</a>        </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://gist.github.com/" data-ga-click="Header, go to gist, text:gist">Gist</a>
+          </li>
+      </ul>
+
+    
+<ul class="header-nav user-nav right" id="user-links">
+  <li class="header-nav-item">
+      <span class="js-socket-channel js-updatable-content cye-lm-tag" data-channel="notification-changed:leonzhouwei" data-url="/notifications/header">
+      <a href="https://github.com/notifications" aria-label="You have unread notifications" class="header-nav-link notification-indicator tooltipped tooltipped-s" data-ga-click="Header, go to notifications, icon:unread" data-hotkey="g n">
+          <span class="mail-status unread cye-lm-tag"></span>
+          <span aria-hidden="true" class="octicon octicon-bell cye-lm-tag"></span>
+</a>  </span>
+
+  </li>
+
+  <li class="header-nav-item dropdown js-menu-container">
+    <a class="header-nav-link tooltipped tooltipped-s js-menu-target" href="https://github.com/new" aria-label="Create new…" data-ga-click="Header, create new, icon:add">
+      <span aria-hidden="true" class="octicon octicon-plus left cye-lm-tag"></span>
+      <span class="dropdown-caret cye-lm-tag"></span>
+    </a>
+
+    <div class="dropdown-menu-content js-menu-content">
+      <ul class="dropdown-menu dropdown-menu-sw">
+        
+<a class="dropdown-item" href="https://github.com/new" data-ga-click="Header, create new repository">
+  New repository
+</a>
+
+
+  <a class="dropdown-item" href="https://github.com/organizations/new" data-ga-click="Header, create new organization">
+    New organization
+  </a>
+
+
+
+  <div class="dropdown-divider"></div>
+  <div class="dropdown-header">
+    <span title="angular/angular.js" class="cye-lm-tag">This repository</span>
+  </div>
+    <a class="dropdown-item" href="https://github.com/angular/angular.js/issues/new" data-ga-click="Header, create new issue">
+      New issue
+    </a>
+
+      </ul>
+    </div>
+  </li>
+
+  <li class="header-nav-item dropdown js-menu-container">
+    <a class="header-nav-link name tooltipped tooltipped-sw js-menu-target" href="https://github.com/leonzhouwei" aria-label="View profile and more" data-ga-click="Header, show menu, icon:avatar">
+      <img alt="@leonzhouwei" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/1259634" width="20">
+      <span class="dropdown-caret cye-lm-tag"></span>
+    </a>
+
+    <div class="dropdown-menu-content js-menu-content">
+      <div class="dropdown-menu  dropdown-menu-sw">
+        <div class=" dropdown-header header-nav-current-user css-truncate">
+            Signed in as <strong class="css-truncate-target">leonzhouwei</strong>
+
+        </div>
+
+
+        <div class="dropdown-divider"></div>
+
+          <a class="dropdown-item" href="https://github.com/leonzhouwei" data-ga-click="Header, go to profile, text:your profile">
+            Your profile
+          </a>
+        <a class="dropdown-item" href="https://github.com/stars" data-ga-click="Header, go to starred repos, text:your stars">
+          Your stars
+        </a>
+        <a class="dropdown-item" href="https://github.com/explore" data-ga-click="Header, go to explore, text:explore">
+          Explore
+        </a>
+          <a class="dropdown-item" href="https://github.com/integrations" data-ga-click="Header, go to integrations, text:integrations">
+            Integrations
+          </a>
+        <a class="dropdown-item" href="https://help.github.com/" data-ga-click="Header, go to help, text:help">
+          Help
+        </a>
+
+          <div class="dropdown-divider"></div>
+
+          <a class="dropdown-item" href="https://github.com/settings/profile" data-ga-click="Header, go to settings, icon:settings">
+            Settings
+          </a>
+
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/logout" class="logout-form" data-form-nonce="6b1533e9a3d60340ee8da8949c9b847e295698a1" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="C/QlIIgTepzwd3MttFMpGoxnqnkD5hh9tZurHDSn+QDfYaOT3i/+yYEsQN03bkAKEWIRwPT2no041DLaEbKwQA=="></div>
+            <button class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+              Sign out
+            </button>
+</form>
+      </div>
+    </div>
+  </li>
+</ul>
+
+
+    
+  </div>
+</div>
+
+      
+
+      
+
+
+    <div id="start-of-content" class="accessibility-aid"></div>
+
+      <div id="js-flash-container">
+</div>
+
+
+    <div role="main" class="main-content cye-lm-tag">
+        <div itemscope="" itemtype="http://schema.org/WebPage" class="cye-lm-tag">
+    <div id="js-repo-pjax-container" class="context-loader-container js-repo-nav-next cye-lm-tag" data-pjax-container="">
+      
+<div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+  <div class="container repohead-details-container">
+
+    
+
+<ul class="pagehead-actions">
+
+  <li>
+        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-form-nonce="6b1533e9a3d60340ee8da8949c9b847e295698a1" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="utLfuyZWXrhD5ZN+YndUf9IaHwdrOVizkcy/PX/FBQRmOoHxgZ7F3T6QeQsxkFh8BAdqqdOcjyfnizxTOQODNw=="></div>      <input id="repository_id" name="repository_id" type="hidden" value="460078">
+
+        <div class="select-menu js-menu-container js-select-menu">
+          <a href="https://github.com/angular/angular.js/subscription" class="btn btn-sm btn-with-count select-menu-button js-menu-target" role="button" tabindex="0" aria-haspopup="true" data-ga-click="Repository, click Watch settings, action:blob#show">
+            <span class="js-select-button cye-lm-tag">
+              <span aria-hidden="true" class="octicon octicon-eye cye-lm-tag"></span>
+              Watch
+            </span>
+          </a>
+          <a class="social-count js-social-count" href="https://github.com/angular/angular.js/watchers">
+            4,139
+          </a>
+
+        <div class="select-menu-modal-holder">
+          <div class="select-menu-modal subscription-menu-modal js-menu-content" aria-hidden="true">
+            <div class="select-menu-header">
+              <span aria-label="Close" class="octicon octicon-x js-menu-close cye-lm-tag" role="button"></span>
+              <span class="select-menu-title cye-lm-tag">Notifications</span>
+            </div>
+
+              <div class="select-menu-list js-navigation-container" role="menu">
+
+                <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+                  <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+                  <div class="select-menu-item-text">
+                    <input checked="checked" id="do_included" name="do" type="radio" value="included">
+                    <span class="select-menu-item-heading cye-lm-tag">Not watching</span>
+                    <span class="description cye-lm-tag">Be notified when participating or @mentioned.</span>
+                    <span class="js-select-button-text hidden-select-button-text cye-lm-tag">
+                      <span class="octicon octicon-eye cye-lm-tag"></span>
+                      Watch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+                  <div class="select-menu-item-text">
+                    <input id="do_subscribed" name="do" type="radio" value="subscribed">
+                    <span class="select-menu-item-heading cye-lm-tag">Watching</span>
+                    <span class="description cye-lm-tag">Be notified of all conversations.</span>
+                    <span class="js-select-button-text hidden-select-button-text cye-lm-tag">
+                      <span class="octicon octicon-eye cye-lm-tag"></span>
+                      Unwatch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+                  <div class="select-menu-item-text">
+                    <input id="do_ignore" name="do" type="radio" value="ignore">
+                    <span class="select-menu-item-heading cye-lm-tag">Ignoring</span>
+                    <span class="description cye-lm-tag">Never be notified.</span>
+                    <span class="js-select-button-text hidden-select-button-text cye-lm-tag">
+                      <span class="octicon octicon-mute cye-lm-tag"></span>
+                      Stop ignoring
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+</form>
+  </li>
+
+  <li>
+    
+  <div class="js-toggler-container js-social-container starring-container on">
+
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/angular/angular.js/unstar" class="js-toggler-form starred js-unstar-button" data-form-nonce="6b1533e9a3d60340ee8da8949c9b847e295698a1" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="v7SxHPOQL9AsDK5hf6YH37N3KPU1OVyVIvWPT4YN3WpEx9rxPGn23UGmlwcQH6sthnf5uwCWk5232d5/YlpKyw=="></div>
+      <button class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar angular/angular.js" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">
+        <span aria-hidden="true" class="octicon octicon-star cye-lm-tag"></span>
+        Unstar
+      </button>
+        <a class="social-count js-social-count" href="https://github.com/angular/angular.js/stargazers">
+          45,910
+        </a>
+</form>
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/angular/angular.js/star" class="js-toggler-form unstarred js-star-button" data-form-nonce="6b1533e9a3d60340ee8da8949c9b847e295698a1" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="SLhMHb5FnCcTf0OLggWd1sFHvojw83zqLn77h2lK2AEXB3yRHTCMLg6rAZSVMA9ztjOStQbPjMB90Ifod70Jkg=="></div>
+      <button class="btn btn-sm btn-with-count js-toggler-target" aria-label="Star this repository" title="Star angular/angular.js" data-ga-click="Repository, click star button, action:blob#show; text:Star">
+        <span aria-hidden="true" class="octicon octicon-star cye-lm-tag"></span>
+        Star
+      </button>
+        <a class="social-count js-social-count" href="https://github.com/angular/angular.js/stargazers">
+          45,910
+        </a>
+</form>  </div>
+
+  </li>
+
+  <li>
+          <a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#fork-destination-box" class="btn btn-sm btn-with-count" title="Fork your own copy of angular/angular.js to your account" aria-label="Fork your own copy of angular/angular.js to your account" rel="facebox" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork">
+              <span aria-hidden="true" class="octicon octicon-repo-forked cye-lm-tag"></span>
+            Fork
+          </a>
+
+          <div id="fork-destination-box" style="display: none;">
+            <h2 class="facebox-header" data-facebox-id="facebox-header">Where should we fork this repository?</h2>
+            <include-fragment src="" class="js-fork-select-fragment fork-select-fragment" data-url="/angular/angular.js/fork?fragment=1">
+              <img alt="Loading" height="64" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/octocat-spinner-128.gif" width="64">
+            </include-fragment>
+          </div>
+
+    <a href="https://github.com/angular/angular.js/network" class="social-count">
+      21,234
+    </a>
+  </li>
+</ul>
+
+    <h1 itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public ">
+  <span aria-hidden="true" class="octicon octicon-repo cye-lm-tag"></span>
+  <span class="author cye-lm-tag"><a href="https://github.com/angular" class="url fn" itemprop="url" rel="author"><span itemprop="title" class="cye-lm-tag">angular</span></a></span><!--
+--><span class="path-divider cye-lm-tag">/</span><!--
+--><strong><a href="https://github.com/angular/angular.js" data-pjax="#js-repo-pjax-container">angular.js</a></strong>
+
+  <span class="page-context-loader cye-lm-tag">
+    <img alt="" height="16" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/octocat-spinner-32.gif" width="16">
+  </span>
+
+</h1>
+
+  </div>
+  <div class="container">
+    
+<nav class="reponav js-repo-nav js-sidenav-container-pjax js-octicon-loaders" role="navigation" data-pjax="#js-repo-pjax-container">
+
+  <a href="https://github.com/angular/angular.js" aria-label="Code" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /angular/angular.js">
+    <span aria-hidden="true" class="octicon octicon-code cye-lm-tag"></span>
+    Code
+</a>
+    <a href="https://github.com/angular/angular.js/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /angular/angular.js/issues">
+      <span aria-hidden="true" class="octicon octicon-issue-opened cye-lm-tag"></span>
+      Issues
+      <span class="counter cye-lm-tag">944</span>
+</a>
+  <a href="https://github.com/angular/angular.js/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /angular/angular.js/pulls">
+    <span aria-hidden="true" class="octicon octicon-git-pull-request cye-lm-tag"></span>
+    Pull requests
+    <span class="counter cye-lm-tag">345</span>
+</a>
+    <a href="https://github.com/angular/angular.js/wiki" class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /angular/angular.js/wiki">
+      <span aria-hidden="true" class="octicon octicon-book cye-lm-tag"></span>
+      Wiki
+</a>
+  <a href="https://github.com/angular/angular.js/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /angular/angular.js/pulse">
+    <span aria-hidden="true" class="octicon octicon-pulse cye-lm-tag"></span>
+    Pulse
+</a>
+  <a href="https://github.com/angular/angular.js/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /angular/angular.js/graphs">
+    <span aria-hidden="true" class="octicon octicon-graph cye-lm-tag"></span>
+    Graphs
+</a>
+
+</nav>
+
+  </div>
+</div>
+
+<div class="container new-discussion-timeline experiment-repo-nav cye-lm-tag">
+  <div class="repository-content cye-lm-tag">
+
+    
+
+<a href="https://github.com/angular/angular.js/blob/8ccc0547a8838454300e2dc75bab7fafdf22d21f/CONTRIBUTING.md" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+
+<!-- blob contrib key: blob_contributors:v21:1b0e83cefdd057119722241a1c37ca83 -->
+
+<div class="file-navigation js-zeroclipboard-container">
+  
+<div class="select-menu js-menu-container js-select-menu left">
+  <button class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w" title="master" type="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+    <i>Branch:</i>
+    <span class="js-select-button css-truncate-target cye-lm-tag">master</span>
+  </button>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="" aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span aria-label="Close" class="octicon octicon-x js-menu-close cye-lm-tag" role="button"></span>
+        <span class="select-menu-title cye-lm-tag">Switch branches/tags</span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/copy-perf/CONTRIBUTING.md" data-name="copy-perf" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="copy-perf">
+                copy-perf
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/g3_v1_0/CONTRIBUTING.md" data-name="g3_v1_0" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="g3_v1_0">
+                g3_v1_0
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/g3_v1_2/CONTRIBUTING.md" data-name="g3_v1_2" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="g3_v1_2">
+                g3_v1_2
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/g3_v1_3/CONTRIBUTING.md" data-name="g3_v1_3" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="g3_v1_3">
+                g3_v1_3
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/g3_v1_4/CONTRIBUTING.md" data-name="g3_v1_4" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="g3_v1_4">
+                g3_v1_4
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/g3_v1_5/CONTRIBUTING.md" data-name="g3_v1_5" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="g3_v1_5">
+                g3_v1_5
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/hubot-integration/CONTRIBUTING.md" data-name="hubot-integration" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="hubot-integration">
+                hubot-integration
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open selected" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md" data-name="master" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="master">
+                master
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/materialize/CONTRIBUTING.md" data-name="materialize" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="materialize">
+                materialize
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/pr-8901/CONTRIBUTING.md" data-name="pr-8901" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="pr-8901">
+                pr-8901
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/sanitize/CONTRIBUTING.md" data-name="sanitize" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="sanitize">
+                sanitize
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/strictDiDocs2/CONTRIBUTING.md" data-name="strictDiDocs2" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="strictDiDocs2">
+                strictDiDocs2
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/travis-debug-karma-socketio/CONTRIBUTING.md" data-name="travis-debug-karma-socketio" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="travis-debug-karma-socketio">
+                travis-debug-karma-socketio
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/v0.9.x/CONTRIBUTING.md" data-name="v0.9.x" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v0.9.x">
+                v0.9.x
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/v1.0.x/CONTRIBUTING.md" data-name="v1.0.x" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.0.x">
+                v1.0.x
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/v1.2.x/CONTRIBUTING.md" data-name="v1.2.x" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.x">
+                v1.2.x
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/v1.3.x/CONTRIBUTING.md" data-name="v1.3.x" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.x">
+                v1.3.x
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/blob/v1.4.x/CONTRIBUTING.md" data-name="v1.4.x" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.x">
+                v1.4.x
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.5.0-rc.0/CONTRIBUTING.md" data-name="v1.5.0-rc.0" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.5.0-rc.0">
+                v1.5.0-rc.0
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.5.0-beta.2/CONTRIBUTING.md" data-name="v1.5.0-beta.2" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.5.0-beta.2">
+                v1.5.0-beta.2
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.5.0-beta.1/CONTRIBUTING.md" data-name="v1.5.0-beta.1" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.5.0-beta.1">
+                v1.5.0-beta.1
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.5.0-beta.0/CONTRIBUTING.md" data-name="v1.5.0-beta.0" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.5.0-beta.0">
+                v1.5.0-beta.0
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.8/CONTRIBUTING.md" data-name="v1.4.8" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.8">
+                v1.4.8
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.7/CONTRIBUTING.md" data-name="v1.4.7" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.7">
+                v1.4.7
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.6/CONTRIBUTING.md" data-name="v1.4.6" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.6">
+                v1.4.6
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.5/CONTRIBUTING.md" data-name="v1.4.5" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.5">
+                v1.4.5
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.4/CONTRIBUTING.md" data-name="v1.4.4" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.4">
+                v1.4.4
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.3/CONTRIBUTING.md" data-name="v1.4.3" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.3">
+                v1.4.3
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.2/CONTRIBUTING.md" data-name="v1.4.2" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.2">
+                v1.4.2
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.1/CONTRIBUTING.md" data-name="v1.4.1" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.1">
+                v1.4.1
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.0/CONTRIBUTING.md" data-name="v1.4.0" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.0">
+                v1.4.0
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.0-rc.2/CONTRIBUTING.md" data-name="v1.4.0-rc.2" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.0-rc.2">
+                v1.4.0-rc.2
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.0-rc.1/CONTRIBUTING.md" data-name="v1.4.0-rc.1" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.0-rc.1">
+                v1.4.0-rc.1
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.0-rc.0/CONTRIBUTING.md" data-name="v1.4.0-rc.0" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.0-rc.0">
+                v1.4.0-rc.0
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.0-beta.6/CONTRIBUTING.md" data-name="v1.4.0-beta.6" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.0-beta.6">
+                v1.4.0-beta.6
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.0-beta.5/CONTRIBUTING.md" data-name="v1.4.0-beta.5" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.0-beta.5">
+                v1.4.0-beta.5
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.0-beta.4/CONTRIBUTING.md" data-name="v1.4.0-beta.4" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.0-beta.4">
+                v1.4.0-beta.4
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.0-beta.3/CONTRIBUTING.md" data-name="v1.4.0-beta.3" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.0-beta.3">
+                v1.4.0-beta.3
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.0-beta.2/CONTRIBUTING.md" data-name="v1.4.0-beta.2" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.0-beta.2">
+                v1.4.0-beta.2
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.0-beta.1/CONTRIBUTING.md" data-name="v1.4.0-beta.1" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.0-beta.1">
+                v1.4.0-beta.1
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.4.0-beta.0/CONTRIBUTING.md" data-name="v1.4.0-beta.0" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.4.0-beta.0">
+                v1.4.0-beta.0
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.20/CONTRIBUTING.md" data-name="v1.3.20" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.20">
+                v1.3.20
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.19/CONTRIBUTING.md" data-name="v1.3.19" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.19">
+                v1.3.19
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.18/CONTRIBUTING.md" data-name="v1.3.18" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.18">
+                v1.3.18
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.17/CONTRIBUTING.md" data-name="v1.3.17" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.17">
+                v1.3.17
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.16/CONTRIBUTING.md" data-name="v1.3.16" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.16">
+                v1.3.16
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.15/CONTRIBUTING.md" data-name="v1.3.15" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.15">
+                v1.3.15
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.14/CONTRIBUTING.md" data-name="v1.3.14" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.14">
+                v1.3.14
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.13/CONTRIBUTING.md" data-name="v1.3.13" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.13">
+                v1.3.13
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.12/CONTRIBUTING.md" data-name="v1.3.12" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.12">
+                v1.3.12
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.11/CONTRIBUTING.md" data-name="v1.3.11" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.11">
+                v1.3.11
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.10/CONTRIBUTING.md" data-name="v1.3.10" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.10">
+                v1.3.10
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.9/CONTRIBUTING.md" data-name="v1.3.9" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.9">
+                v1.3.9
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.8/CONTRIBUTING.md" data-name="v1.3.8" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.8">
+                v1.3.8
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.7/CONTRIBUTING.md" data-name="v1.3.7" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.7">
+                v1.3.7
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.6/CONTRIBUTING.md" data-name="v1.3.6" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.6">
+                v1.3.6
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.5/CONTRIBUTING.md" data-name="v1.3.5" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.5">
+                v1.3.5
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.4/CONTRIBUTING.md" data-name="v1.3.4" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.4">
+                v1.3.4
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.3/CONTRIBUTING.md" data-name="v1.3.3" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.3">
+                v1.3.3
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.2/CONTRIBUTING.md" data-name="v1.3.2" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.2">
+                v1.3.2
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.1/CONTRIBUTING.md" data-name="v1.3.1" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.1">
+                v1.3.1
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0/CONTRIBUTING.md" data-name="v1.3.0" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0">
+                v1.3.0
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-rc.5/CONTRIBUTING.md" data-name="v1.3.0-rc.5" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-rc.5">
+                v1.3.0-rc.5
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-rc.4/CONTRIBUTING.md" data-name="v1.3.0-rc.4" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-rc.4">
+                v1.3.0-rc.4
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-rc.3/CONTRIBUTING.md" data-name="v1.3.0-rc.3" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-rc.3">
+                v1.3.0-rc.3
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-rc.2/CONTRIBUTING.md" data-name="v1.3.0-rc.2" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-rc.2">
+                v1.3.0-rc.2
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-rc.1/CONTRIBUTING.md" data-name="v1.3.0-rc.1" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-rc.1">
+                v1.3.0-rc.1
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-rc.0/CONTRIBUTING.md" data-name="v1.3.0-rc.0" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-rc.0">
+                v1.3.0-rc.0
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.19/CONTRIBUTING.md" data-name="v1.3.0-beta.19" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.19">
+                v1.3.0-beta.19
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.18/CONTRIBUTING.md" data-name="v1.3.0-beta.18" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.18">
+                v1.3.0-beta.18
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.17/CONTRIBUTING.md" data-name="v1.3.0-beta.17" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.17">
+                v1.3.0-beta.17
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.16/CONTRIBUTING.md" data-name="v1.3.0-beta.16" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.16">
+                v1.3.0-beta.16
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.15/CONTRIBUTING.md" data-name="v1.3.0-beta.15" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.15">
+                v1.3.0-beta.15
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.14/CONTRIBUTING.md" data-name="v1.3.0-beta.14" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.14">
+                v1.3.0-beta.14
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.13/CONTRIBUTING.md" data-name="v1.3.0-beta.13" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.13">
+                v1.3.0-beta.13
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.12/CONTRIBUTING.md" data-name="v1.3.0-beta.12" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.12">
+                v1.3.0-beta.12
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.11/CONTRIBUTING.md" data-name="v1.3.0-beta.11" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.11">
+                v1.3.0-beta.11
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.10/CONTRIBUTING.md" data-name="v1.3.0-beta.10" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.10">
+                v1.3.0-beta.10
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.9/CONTRIBUTING.md" data-name="v1.3.0-beta.9" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.9">
+                v1.3.0-beta.9
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.8/CONTRIBUTING.md" data-name="v1.3.0-beta.8" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.8">
+                v1.3.0-beta.8
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.7/CONTRIBUTING.md" data-name="v1.3.0-beta.7" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.7">
+                v1.3.0-beta.7
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.6/CONTRIBUTING.md" data-name="v1.3.0-beta.6" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.6">
+                v1.3.0-beta.6
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.5/CONTRIBUTING.md" data-name="v1.3.0-beta.5" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.5">
+                v1.3.0-beta.5
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.4/CONTRIBUTING.md" data-name="v1.3.0-beta.4" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.4">
+                v1.3.0-beta.4
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.3/CONTRIBUTING.md" data-name="v1.3.0-beta.3" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.3">
+                v1.3.0-beta.3
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.2/CONTRIBUTING.md" data-name="v1.3.0-beta.2" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.2">
+                v1.3.0-beta.2
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.3.0-beta.1/CONTRIBUTING.md" data-name="v1.3.0-beta.1" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.3.0-beta.1">
+                v1.3.0-beta.1
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.29/CONTRIBUTING.md" data-name="v1.2.29" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.29">
+                v1.2.29
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.28/CONTRIBUTING.md" data-name="v1.2.28" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.28">
+                v1.2.28
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.27/CONTRIBUTING.md" data-name="v1.2.27" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.27">
+                v1.2.27
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.26/CONTRIBUTING.md" data-name="v1.2.26" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.26">
+                v1.2.26
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.25/CONTRIBUTING.md" data-name="v1.2.25" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.25">
+                v1.2.25
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.24/CONTRIBUTING.md" data-name="v1.2.24" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.24">
+                v1.2.24
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.23/CONTRIBUTING.md" data-name="v1.2.23" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.23">
+                v1.2.23
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.22/CONTRIBUTING.md" data-name="v1.2.22" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.22">
+                v1.2.22
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.21/CONTRIBUTING.md" data-name="v1.2.21" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.21">
+                v1.2.21
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.20/CONTRIBUTING.md" data-name="v1.2.20" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.20">
+                v1.2.20
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.19/CONTRIBUTING.md" data-name="v1.2.19" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.19">
+                v1.2.19
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.18/CONTRIBUTING.md" data-name="v1.2.18" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.18">
+                v1.2.18
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.17/CONTRIBUTING.md" data-name="v1.2.17" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.17">
+                v1.2.17
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.16/CONTRIBUTING.md" data-name="v1.2.16" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.16">
+                v1.2.16
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.15/CONTRIBUTING.md" data-name="v1.2.15" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.15">
+                v1.2.15
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.14/CONTRIBUTING.md" data-name="v1.2.14" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.14">
+                v1.2.14
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.13/CONTRIBUTING.md" data-name="v1.2.13" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.13">
+                v1.2.13
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.12/CONTRIBUTING.md" data-name="v1.2.12" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.12">
+                v1.2.12
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.11/CONTRIBUTING.md" data-name="v1.2.11" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.11">
+                v1.2.11
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.10/CONTRIBUTING.md" data-name="v1.2.10" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.10">
+                v1.2.10
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.9/CONTRIBUTING.md" data-name="v1.2.9" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.9">
+                v1.2.9
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.8/CONTRIBUTING.md" data-name="v1.2.8" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.8">
+                v1.2.8
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.7/CONTRIBUTING.md" data-name="v1.2.7" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.7">
+                v1.2.7
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.6/CONTRIBUTING.md" data-name="v1.2.6" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.6">
+                v1.2.6
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.5/CONTRIBUTING.md" data-name="v1.2.5" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.5">
+                v1.2.5
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.4/CONTRIBUTING.md" data-name="v1.2.4" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.4">
+                v1.2.4
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.3/CONTRIBUTING.md" data-name="v1.2.3" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.3">
+                v1.2.3
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.2/CONTRIBUTING.md" data-name="v1.2.2" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.2">
+                v1.2.2
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.1/CONTRIBUTING.md" data-name="v1.2.1" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.1">
+                v1.2.1
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.0/CONTRIBUTING.md" data-name="v1.2.0" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.0">
+                v1.2.0
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/angular/angular.js/tree/v1.2.0rc1/CONTRIBUTING.md" data-name="v1.2.0rc1" data-skip-pjax="true" rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon cye-lm-tag"></span>
+              <span class="select-menu-item-text css-truncate-target cye-lm-tag" title="v1.2.0rc1">
+                v1.2.0rc1
+              </span>
+            </a>
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  <div class="btn-group right">
+    <a href="https://github.com/angular/angular.js/find/master" class="js-show-file-finder btn btn-sm" data-pjax="" data-hotkey="t">
+      Find file
+    </a>
+    <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">Copy path</button>
+  </div>
+  <div class="breadcrumb js-zeroclipboard-target">
+    <span class="repo-root js-repo-root cye-lm-tag"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="cye-lm-tag"><a href="https://github.com/angular/angular.js" class="" data-branch="master" data-pjax="true" itemscope="url"><span itemprop="title" class="cye-lm-tag">angular.js</span></a></span></span><span class="separator cye-lm-tag">/</span><strong class="final-path">CONTRIBUTING.md</strong>
+  </div>
+</div>
+
+
+  <div class="commit-tease">
+      <span class="right cye-lm-tag">
+        <a class="commit-tease-sha" href="https://github.com/angular/angular.js/commit/25f1bbaad16f13d31bf269ab5d6e3076e080dade" data-pjax="">
+          25f1bba
+        </a>
+        <time datetime="2015-11-11T12:21:41Z" is="relative-time" title="2015年11月11日 GMT+8下午8:21">on 11 Nov 2015</time>
+      </span>
+      <div>
+        <img alt="@ericcarraway" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/6632454" width="20">
+        <a href="https://github.com/ericcarraway" class="user-mention" rel="contributor">ericcarraway</a>
+          <a href="https://github.com/angular/angular.js/commit/25f1bbaad16f13d31bf269ab5d6e3076e080dade" class="message" data-pjax="true" title="docs(contributing): fix typo (a unambiguous =&gt; an unambiguous)
+
+use the article “an” before words that start with a vowel sound
+
+Closes #13292">docs(contributing): fix typo (a unambiguous =&gt; an unambiguous)</a>
+      </div>
+
+    <div class="commit-tease-contributors">
+      <a class="muted-link contributors-toggle" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#blob_contributors_box" rel="facebox">
+        <strong>26</strong>
+         contributors
+      </a>
+          <a class="avatar-link tooltipped tooltipped-s" aria-label="stevemao" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=stevemao"><img alt="@stevemao" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/6316590" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="petebacondarwin" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=petebacondarwin"><img alt="@petebacondarwin" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/15655" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="btford" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=btford"><img alt="@btford" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/474988" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="naomiblack" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=naomiblack"><img alt="@naomiblack" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/2286589" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="IgorMinar" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=IgorMinar"><img alt="@IgorMinar" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/216296" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="RichardLitt" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=RichardLitt"><img alt="@RichardLitt" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/910753" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="deepak-kapoor" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=deepak-kapoor"><img alt="@deepak-kapoor" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/917512" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="chalin" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=chalin"><img alt="@chalin" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/4140793" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="treyhunner" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=treyhunner"><img alt="@treyhunner" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/285352" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="micole" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=micole"><img alt="@micole" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/541853" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="matsko" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=matsko"><img alt="@matsko" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/93018" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="carver" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=carver"><img alt="@carver" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/205327" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="sap9433" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=sap9433"><img alt="@sap9433" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/4341670" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="kranrao" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=kranrao"><img alt="@kranrao" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/6110221" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="Iristyle" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=Iristyle"><img alt="@Iristyle" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/394081" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="XrXr" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=XrXr"><img alt="@XrXr" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/6457510" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="HNygard" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=HNygard"><img alt="@HNygard" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/168380" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="gregjhogan" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=gregjhogan"><img alt="@gregjhogan" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/4112046" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="ericcarraway" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=ericcarraway"><img alt="@ericcarraway" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/6632454" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="gkalpak" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=gkalpak"><img alt="@gkalpak" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/8604205" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="bigblind" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=bigblind"><img alt="@bigblind" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/737493" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="stephensauceda" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=stephensauceda"><img alt="@stephensauceda" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/1017723" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="ChrisRose" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=ChrisRose"><img alt="@ChrisRose" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/957281" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="gogotanaka" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=gogotanaka"><img alt="@gogotanaka" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/5266933" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="afshinator" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=afshinator"><img alt="@afshinator" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/2702669" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="adzample" href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md?author=adzample"><img alt="@adzample" class="avatar" height="20" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/8250887" width="20"> </a>
+
+
+    </div>
+
+    <div id="blob_contributors_box" style="display:none">
+      <h2 class="facebox-header" data-facebox-id="facebox-header">Users who have contributed to this file</h2>
+      <ul class="facebox-user-list" data-facebox-id="facebox-description">
+          <li class="facebox-user-list-item">
+            <img alt="@stevemao" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/6316590(1)" width="24">
+            <a href="https://github.com/stevemao">stevemao</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@petebacondarwin" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/15655(1)" width="24">
+            <a href="https://github.com/petebacondarwin">petebacondarwin</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@btford" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/474988(1)" width="24">
+            <a href="https://github.com/btford">btford</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@naomiblack" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/2286589(1)" width="24">
+            <a href="https://github.com/naomiblack">naomiblack</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@IgorMinar" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/216296(1)" width="24">
+            <a href="https://github.com/IgorMinar">IgorMinar</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@RichardLitt" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/910753(1)" width="24">
+            <a href="https://github.com/RichardLitt">RichardLitt</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@deepak-kapoor" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/917512(1)" width="24">
+            <a href="https://github.com/deepak-kapoor">deepak-kapoor</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@chalin" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/4140793(1)" width="24">
+            <a href="https://github.com/chalin">chalin</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@treyhunner" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/285352(1)" width="24">
+            <a href="https://github.com/treyhunner">treyhunner</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@micole" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/541853(1)" width="24">
+            <a href="https://github.com/micole">micole</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@matsko" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/93018(1)" width="24">
+            <a href="https://github.com/matsko">matsko</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@carver" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/205327(1)" width="24">
+            <a href="https://github.com/carver">carver</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@sap9433" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/4341670(1)" width="24">
+            <a href="https://github.com/sap9433">sap9433</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@kranrao" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/6110221(1)" width="24">
+            <a href="https://github.com/kranrao">kranrao</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@Iristyle" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/394081(1)" width="24">
+            <a href="https://github.com/Iristyle">Iristyle</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@XrXr" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/6457510(1)" width="24">
+            <a href="https://github.com/XrXr">XrXr</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@HNygard" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/168380(1)" width="24">
+            <a href="https://github.com/HNygard">HNygard</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@gregjhogan" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/4112046(1)" width="24">
+            <a href="https://github.com/gregjhogan">gregjhogan</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@ericcarraway" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/6632454(1)" width="24">
+            <a href="https://github.com/ericcarraway">ericcarraway</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@gkalpak" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/8604205(1)" width="24">
+            <a href="https://github.com/gkalpak">gkalpak</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@bigblind" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/737493(1)" width="24">
+            <a href="https://github.com/bigblind">bigblind</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@stephensauceda" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/1017723(1)" width="24">
+            <a href="https://github.com/stephensauceda">stephensauceda</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@ChrisRose" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/957281(1)" width="24">
+            <a href="https://github.com/ChrisRose">ChrisRose</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@gogotanaka" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/5266933(1)" width="24">
+            <a href="https://github.com/gogotanaka">gogotanaka</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@afshinator" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/2702669(1)" width="24">
+            <a href="https://github.com/afshinator">afshinator</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@adzample" height="24" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/8250887(1)" width="24">
+            <a href="https://github.com/adzample">adzample</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+<div class="file cye-lm-tag">
+  <div class="file-header">
+  <div class="file-actions">
+
+    <div class="btn-group">
+      <a href="https://github.com/angular/angular.js/raw/master/CONTRIBUTING.md" class="btn btn-sm " id="raw-url">Raw</a>
+        <a href="https://github.com/angular/angular.js/blame/master/CONTRIBUTING.md" class="btn btn-sm js-update-url-with-hash">Blame</a>
+      <a href="https://github.com/angular/angular.js/commits/master/CONTRIBUTING.md" class="btn btn-sm " rel="nofollow">History</a>
+    </div>
+
+
+        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/angular/angular.js/edit/master/CONTRIBUTING.md" class="inline-form js-update-url-with-hash" data-form-nonce="6b1533e9a3d60340ee8da8949c9b847e295698a1" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="N7UFVVhQhpHqjhngeDk220lXZGBqqSg6r0N2w2IlOfVr6Vdlqe0hpjiPx8fVdk282ALMZ2xPuY0PySh/xV5zug=="></div>
+          <button class="octicon-btn tooltipped tooltipped-nw" type="submit" aria-label="Fork this project and edit the file" data-hotkey="e" data-disable-with="">
+            <span aria-hidden="true" class="octicon octicon-pencil cye-lm-tag"></span>
+          </button>
+</form>        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/angular/angular.js/delete/master/CONTRIBUTING.md" class="inline-form" data-form-nonce="6b1533e9a3d60340ee8da8949c9b847e295698a1" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="COYUDXKcIJVU6OacGxXM/FKld2mpvxGWzG8NBGniYNPdp7BgdkJJRoUffILpBOlMiEYRv/LY6rAlJTD91M5SQg=="></div>
+          <button class="octicon-btn octicon-btn-danger tooltipped tooltipped-nw" type="submit" aria-label="Fork this project and delete the file" data-disable-with="">
+            <span aria-hidden="true" class="octicon octicon-trashcan cye-lm-tag"></span>
+          </button>
+</form>  </div>
+
+  <div class="file-info">
+      286 lines (216 sloc)
+      <span class="file-info-divider cye-lm-tag"></span>
+    13.1 KB
+  </div>
+</div>
+
+  
+  <div id="readme" class="blob instapaper_body cye-lm-tag">
+    <article class="markdown-body entry-content cye-lm-tag" itemprop="mainContentOfPage"><h1><a id="user-content-contributing-to-angularjs" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#contributing-to-angularjs" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a>Contributing to AngularJS</h1>
+
+<p class="cye-lm-tag">We'd love for you to contribute to our source code and to make AngularJS even better than it is
+today! Here are the guidelines we'd like you to follow:</p>
+
+<ul>
+<li><a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#coc">Code of Conduct</a></li>
+<li><a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#question">Question or Problem?</a></li>
+<li><a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#issue">Issues and Bugs</a></li>
+<li><a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#feature">Feature Requests</a></li>
+<li><a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#submit">Submission Guidelines</a></li>
+<li><a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#rules">Coding Rules</a></li>
+<li><a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit">Commit Message Guidelines</a></li>
+<li><a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#cla">Signing the CLA</a></li>
+<li><a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#info">Further Info</a></li>
+</ul>
+
+<h2><a id="user-content--code-of-conduct" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-code-of-conduct" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a><a name="user-content-coc"></a> Code of Conduct</h2>
+
+<p class="cye-lm-tag">Help us keep Angular open and inclusive. Please read and follow our <a href="https://github.com/angular/code-of-conduct/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
+
+<h2><a id="user-content--got-a-question-or-problem" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-got-a-question-or-problem" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a><a name="user-content-question"></a> Got a Question or Problem?</h2>
+
+<p class="cye-lm-tag">If you have questions about how to use AngularJS, please direct these to the <a href="https://groups.google.com/forum/?fromgroups#!forum/angular">Google Group</a>
+discussion list or <a href="http://stackoverflow.com/questions/tagged/angularjs">StackOverflow</a>. We are also available on <a href="http://webchat.freenode.net/?channels=angularjs&amp;uio=d4">IRC</a> and <a href="https://gitter.im/angular/angular.js">Gitter</a>.</p>
+
+<h2><a id="user-content--found-an-issue" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-found-an-issue" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a><a name="user-content-issue"></a> Found an Issue?</h2>
+
+<p class="cye-lm-tag">If you find a bug in the source code or a mistake in the documentation, you can help us by
+submitting an issue to our <a href="https://github.com/angular/angular.js">GitHub Repository</a>. Even better you can submit a Pull Request
+with a fix.</p>
+
+<p class="cye-lm-tag"><strong><em>Localization Issue:</em></strong> <em>Angular.js uses the <a href="https://github.com/google/closure-library/tree/master/closure/goog/i18n">Google Closure I18N library</a>, to generate its own I18N files. This means that
+any changes to these files would be lost the next time that we import the library. The recommended
+approach is to submit a patch to the I18N project directly, instead of submitting it here.</em></p>
+
+<p class="cye-lm-tag"><strong>Please see the Submission Guidelines below</strong>.</p>
+
+<h2><a id="user-content--want-a-feature" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-want-a-feature" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a><a name="user-content-feature"></a> Want a Feature?</h2>
+
+<p class="cye-lm-tag">You can request a new feature by submitting an issue to our <a href="https://github.com/angular/angular.js">GitHub Repository</a>.  If you
+would like to implement a new feature then consider what kind of change it is:</p>
+
+<ul>
+<li><strong>Major Changes</strong> that you wish to contribute to the project should be discussed first on our
+<a href="https://groups.google.com/forum/?fromgroups#!forum/angular-dev">dev mailing list</a> or <a href="http://webchat.freenode.net/?channels=angularjs&amp;uio=d4">IRC</a> so that we can better coordinate our efforts, prevent
+duplication of work, and help you to craft the change so that it is successfully accepted into the
+project.</li>
+<li><strong>Small Changes</strong> can be crafted and submitted to the <a href="https://github.com/angular/angular.js">GitHub Repository</a> as a Pull Request.</li>
+</ul>
+
+<h2><a id="user-content--want-a-doc-fix" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-want-a-doc-fix" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a><a name="user-content-docs"></a> Want a Doc Fix?</h2>
+
+<p class="cye-lm-tag">If you want to help improve the docs, it's a good idea to let others know what you're working on to
+minimize duplication of effort. Before starting, check out the issue queue for
+<a href="https://github.com/angular/angular.js/issues?milestone=24&amp;state=open">Milestone:Docs Only</a>.
+Comment on an issue to let others know what you're working on, or create a new issue if your work
+doesn't fit within the scope of any of the existing doc fix projects.</p>
+
+<p class="cye-lm-tag">For large fixes, please build and test the documentation before submitting the PR to be sure you haven't
+accidentally introduced any layout or formatting issues. You should also make sure that your commit message
+is labeled "docs:" and follows the <strong>Git Commit Guidelines</strong> outlined below.</p>
+
+<p class="cye-lm-tag">If you're just making a small change, don't worry about filing an issue first. Use the friendly blue "Improve this doc" button at the top right of the doc page to fork the repository in-place and make a quick change on the fly. When naming the commit, it is advised to still label it according to the commit guidelines below, by starting the commit message with <strong>docs</strong> and referencing the filename. Since this is not obvious and some changes are made on the fly, this is not strictly necessary and we will understand if this isn't done the first few times.</p>
+
+<h2><a id="user-content--submission-guidelines" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-submission-guidelines" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a><a name="user-content-submit"></a> Submission Guidelines</h2>
+
+<h3><a id="user-content-submitting-an-issue" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#submitting-an-issue" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a>Submitting an Issue</h3>
+
+<p class="cye-lm-tag">Before you submit your issue search the archive, maybe your question was already answered.</p>
+
+<p class="cye-lm-tag">If your issue appears to be a bug, and hasn't been reported, open a new issue.
+Help us to maximize the effort we can spend fixing issues and adding new
+features, by not reporting duplicate issues.  Providing the following information will increase the
+chances of your issue being dealt with quickly:</p>
+
+<ul>
+<li><strong>Overview of the Issue</strong> - if an error is being thrown a non-minified stack trace helps</li>
+<li><strong>Motivation for or Use Case</strong> - explain why this is a bug for you</li>
+<li><strong>Angular Version(s)</strong> - is it a regression?</li>
+<li><strong>Browsers and Operating System</strong> - is this a problem with all browsers or only IE8?</li>
+<li><strong>Reproduce the Error</strong> - provide a live example (using <a href="http://plnkr.co/edit">Plunker</a> or
+<a href="http://jsfiddle.net/">JSFiddle</a>) or an unambiguous set of steps.</li>
+<li><strong>Related Issues</strong> - has a similar issue been reported before?</li>
+<li><strong>Suggest a Fix</strong> - if you can't fix the bug yourself, perhaps you can point to what might be
+causing the problem (line of code or commit)</li>
+</ul>
+
+<p class="cye-lm-tag">Here is a great example of a well defined issue: <a href="https://github.com/angular/angular.js/issues/5069">https://github.com/angular/angular.js/issues/5069</a></p>
+
+<p class="cye-lm-tag"><strong>If you get help, help others. Good karma rulez!</strong></p>
+
+<h3><a id="user-content-submitting-a-pull-request" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#submitting-a-pull-request" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a>Submitting a Pull Request</h3>
+
+<p class="cye-lm-tag">Before you submit your pull request consider the following guidelines:</p>
+
+<ul>
+<li>Search <a href="https://github.com/angular/angular.js/pulls">GitHub</a> for an open or closed Pull Request
+that relates to your submission. You don't want to duplicate effort.</li>
+<li>Please sign our <a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#cla">Contributor License Agreement (CLA)</a> before sending pull
+requests. We cannot accept code without this.</li>
+<li><p class="cye-lm-tag">Make your changes in a new git branch:</p>
+
+<div class="highlight highlight-source-shell"><pre> git checkout -b my-fix-branch master</pre></div></li>
+<li><p class="cye-lm-tag">Create your patch, <strong>including appropriate test cases</strong>.</p></li>
+<li>Follow our <a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#rules">Coding Rules</a>.</li>
+<li>Run the full Angular test suite, as described in the <a href="https://docs.angularjs.org/guide">developer documentation</a>,
+and ensure that all tests pass.</li>
+<li><p class="cye-lm-tag">Commit your changes using a descriptive commit message that follows our
+<a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit-message-format">commit message conventions</a> and passes our commit message presubmit hook
+<code>validate-commit-msg.js</code>. Adherence to the <a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit-message-format">commit message conventions</a>
+is required because release notes are automatically generated from these messages.</p>
+
+<div class="highlight highlight-source-shell"><pre>   git commit -a</pre></div>
+
+<p class="cye-lm-tag">Note: the optional commit <code>-a</code> command line option will automatically "add" and "rm" edited files.</p></li>
+<li><p class="cye-lm-tag">Build your changes locally to ensure all the tests pass:</p>
+
+<div class="highlight highlight-source-shell"><pre>grunt <span class="pl-c1 cye-lm-tag">test</span></pre></div></li>
+<li><p class="cye-lm-tag">Push your branch to GitHub:</p>
+
+<div class="highlight highlight-source-shell"><pre>git push origin my-fix-branch</pre></div></li>
+<li><p class="cye-lm-tag">In GitHub, send a pull request to <code>angular:master</code>.</p></li>
+<li><p class="cye-lm-tag">If we suggest changes then:</p>
+
+<ul>
+<li>Make the required updates.</li>
+<li>Re-run the Angular test suite to ensure tests are still passing.</li>
+<li><p class="cye-lm-tag">Rebase your branch and force push to your GitHub repository (this will update your Pull Request):</p>
+
+<div class="highlight highlight-source-shell"><pre>git rebase master -i
+git push origin my-fix-branch -f</pre></div></li>
+</ul></li>
+</ul>
+
+<p class="cye-lm-tag">That's it! Thank you for your contribution!</p>
+
+<h4><a id="user-content-after-your-pull-request-is-merged" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#after-your-pull-request-is-merged" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a>After your pull request is merged</h4>
+
+<p class="cye-lm-tag">After your pull request is merged, you can safely delete your branch and pull the changes
+from the main (upstream) repository:</p>
+
+<ul>
+<li><p class="cye-lm-tag">Delete the remote branch on GitHub either through the GitHub web UI or your local shell as follows:</p>
+
+<div class="highlight highlight-source-shell"><pre>git push origin --delete my-fix-branch</pre></div></li>
+<li><p class="cye-lm-tag">Check out the master branch:</p>
+
+<div class="highlight highlight-source-shell"><pre>git checkout master -f</pre></div></li>
+<li><p class="cye-lm-tag">Delete the local branch:</p>
+
+<div class="highlight highlight-source-shell"><pre>git branch -D my-fix-branch</pre></div></li>
+<li><p class="cye-lm-tag">Update your master with the latest upstream version:</p>
+
+<div class="highlight highlight-source-shell"><pre>git pull --ff upstream master</pre></div></li>
+</ul>
+
+<h2><a id="user-content--coding-rules" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-coding-rules" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a><a name="user-content-rules"></a> Coding Rules</h2>
+
+<p class="cye-lm-tag">To ensure consistency throughout the source code, keep these rules in mind as you are working:</p>
+
+<ul>
+<li>All features or bug fixes <strong>must be tested</strong> by one or more <a href="https://docs.angularjs.org/guide/unit-testing">specs</a>.</li>
+<li>All public API methods <strong>must be documented</strong> with ngdoc, an extended version of jsdoc (we added
+support for markdown and templating via @ngdoc tag). To see how we document our APIs, please check
+out the existing ngdocs and see <a href="https://github.com/angular/angular.js/wiki/Writing-AngularJS-Documentation">this wiki page</a>.</li>
+<li>With the exceptions listed below, we follow the rules contained in
+<a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google's JavaScript Style Guide</a>:
+
+<ul>
+<li><strong>Do not use namespaces</strong>: Instead,  wrap the entire angular code base in an anonymous closure and
+export our API explicitly rather than implicitly.</li>
+<li>Wrap all code at <strong>100 characters</strong>.</li>
+<li>Instead of complex inheritance hierarchies, we <strong>prefer simple objects</strong>. We use prototypal
+inheritance only when absolutely necessary.</li>
+<li>We <strong>love functions and closures</strong> and, whenever possible, prefer them over objects.</li>
+<li>To write concise code that can be better minified, we <strong>use aliases internally</strong> that map to the
+external API. See our existing code to see what we mean.</li>
+<li>We <strong>don't go crazy with type annotations</strong> for private internal APIs unless it's an internal API
+that is used throughout AngularJS. The best guidance is to do what makes the most sense.</li>
+</ul></li>
+</ul>
+
+<h2><a id="user-content--git-commit-guidelines" class="anchor" href="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/angular.js_CONTRIBUTING.md at master · angular_angular.js.html" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a><a name="user-content-commit"></a> Git Commit Guidelines</h2>
+
+<p class="cye-lm-tag">We have very precise rules over how our git commit messages can be formatted.  This leads to <strong>more
+readable messages</strong> that are easy to follow when looking through the <strong>project history</strong>.  But also,
+we use the git commit messages to <strong>generate the AngularJS change log</strong>.</p>
+
+<p class="cye-lm-tag">The commit message formatting can be added using a typical git workflow or through the use of a CLI wizard (<a href="https://github.com/commitizen/cz-cli">Commitizen</a>). To use the wizard, run <code>npm run commit</code> in your terminal after staging your changes in git.</p>
+
+<h3><a id="user-content-commit-message-format" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit-message-format" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a>Commit Message Format</h3>
+
+<p class="cye-lm-tag">Each commit message consists of a <strong>header</strong>, a <strong>body</strong> and a <strong>footer</strong>.  The header has a special
+format that includes a <strong>type</strong>, a <strong>scope</strong> and a <strong>subject</strong>:</p>
+
+<pre class="cye-lm-tag"><code>&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+&lt;BLANK LINE&gt;
+&lt;body&gt;
+&lt;BLANK LINE&gt;
+&lt;footer&gt;
+</code></pre>
+
+<p class="cye-lm-tag">The <strong>header</strong> is mandatory and the <strong>scope</strong> of the header is optional.</p>
+
+<p class="cye-lm-tag">Any line of the commit message cannot be longer 100 characters! This allows the message to be easier
+to read on GitHub as well as in various git tools.</p>
+
+<h3><a id="user-content-revert" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#revert" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a>Revert</h3>
+
+<p class="cye-lm-tag">If the commit reverts a previous commit, it should begin with <code>revert:</code>, followed by the header of the reverted commit. In the body it should say: <code>This reverts commit &lt;hash&gt;.</code>, where the hash is the SHA of the commit being reverted.</p>
+
+<h3><a id="user-content-type" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#type" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a>Type</h3>
+
+<p class="cye-lm-tag">Must be one of the following:</p>
+
+<ul>
+<li><strong>feat</strong>: A new feature</li>
+<li><strong>fix</strong>: A bug fix</li>
+<li><strong>docs</strong>: Documentation only changes</li>
+<li><strong>style</strong>: Changes that do not affect the meaning of the code (white-space, formatting, missing
+semi-colons, etc)</li>
+<li><strong>refactor</strong>: A code change that neither fixes a bug nor adds a feature</li>
+<li><strong>perf</strong>: A code change that improves performance</li>
+<li><strong>test</strong>: Adding missing tests</li>
+<li><strong>chore</strong>: Changes to the build process or auxiliary tools and libraries such as documentation
+generation</li>
+</ul>
+
+<h3><a id="user-content-scope" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#scope" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a>Scope</h3>
+
+<p class="cye-lm-tag">The scope could be anything specifying place of the commit change. For example <code>$location</code>,
+<code>$browser</code>, <code>$compile</code>, <code>$rootScope</code>, <code>ngHref</code>, <code>ngClick</code>, <code>ngView</code>, etc...</p>
+
+<h3><a id="user-content-subject" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#subject" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a>Subject</h3>
+
+<p class="cye-lm-tag">The subject contains succinct description of the change:</p>
+
+<ul>
+<li>use the imperative, present tense: "change" not "changed" nor "changes"</li>
+<li>don't capitalize first letter</li>
+<li>no dot (.) at the end</li>
+</ul>
+
+<h3><a id="user-content-body" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#body" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a>Body</h3>
+
+<p class="cye-lm-tag">Just as in the <strong>subject</strong>, use the imperative, present tense: "change" not "changed" nor "changes".
+The body should include the motivation for the change and contrast this with previous behavior.</p>
+
+<h3><a id="user-content-footer" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#footer" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a>Footer</h3>
+
+<p class="cye-lm-tag">The footer should contain any information about <strong>Breaking Changes</strong> and is also the place to
+reference GitHub issues that this commit <strong>Closes</strong>.</p>
+
+<p class="cye-lm-tag"><strong>Breaking Changes</strong> should start with the word <code>BREAKING CHANGE:</code> with a space or two newlines. The rest of the commit message is then used for this.</p>
+
+<p class="cye-lm-tag">A detailed explanation can be found in this <a href="https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#">document</a>.</p>
+
+<h2><a id="user-content--signing-the-cla" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-signing-the-cla" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a><a name="user-content-cla"></a> Signing the CLA</h2>
+
+<p class="cye-lm-tag">Please sign our Contributor License Agreement (CLA) before sending pull requests. For any code
+changes to be accepted, the CLA must be signed. It's a quick process, we promise!</p>
+
+<ul>
+<li>For individuals we have a <a href="http://code.google.com/legal/individual-cla-v1.0.html">simple click-through form</a>.</li>
+<li>For corporations we'll need you to
+<a href="http://code.google.com/legal/corporate-cla-v1.0.html">print, sign and one of scan+email, fax or mail the form</a>.</li>
+</ul>
+
+<h2><a id="user-content--further-information" class="anchor" href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-further-information" aria-hidden="true"><span class="octicon octicon-link cye-lm-tag"></span></a><a name="user-content-info"></a> Further Information</h2>
+
+<p class="cye-lm-tag">You can find out more detailed information about contributing in the
+<a href="http://docs.angularjs.org/misc/contribute">AngularJS documentation</a>.</p>
+
+<p class="cye-lm-tag"><a href="https://github.com/igrigorik/ga-beacon"><img src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/68747470733a2f2f67612d626561636f6e2e61707073706f742e636f6d2f55412d383539343334362d31312f616e67756c61722e6a732f434f4e545249425554494e472e6d643f706978656c" alt="Analytics" data-canonical-src="https://ga-beacon.appspot.com/UA-8594346-11/angular.js/CONTRIBUTING.md?pixel" style="max-width:100%;"></a></p>
+</article>
+  </div>
+
+</div>
+
+<a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#jump-to-line" rel="facebox[.linejump]" data-hotkey="l" style="display:none">Jump to Line</a>
+<div id="jump-to-line" style="display:none">
+  <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="" class="js-jump-to-line-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+    <input class="linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line…" aria-label="Jump to line" autofocus="">
+    <button type="submit" class="btn">Go</button>
+</form></div>
+
+  </div>
+  <div class="modal-backdrop"></div>
+</div>
+
+    </div>
+  </div>
+
+    </div>
+
+        <div class="container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links right">
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+      <li><a href="https://developer.github.com/" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com/" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com/" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+        <li><a href="https://github.com/pricing" data-ga-click="Footer, go to pricing, text:pricing">Pricing</a></li>
+
+    </ul>
+
+    <a href="https://github.com/" aria-label="Homepage">
+      <span aria-hidden="true" class="mega-octicon octicon-mark-github cye-lm-tag" title="GitHub "></span>
+</a>
+    <ul class="site-footer-links">
+      <li>© 2016 <span title="0.10573s from github-fe136-cp1-prd.iad.github.net" class="cye-lm-tag">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+        <li><a href="https://help.github.com/" data-ga-click="Footer, go to help, text:help">Help</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+    
+    
+    
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert cye-lm-tag"></span>
+      <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+        <span class="octicon octicon-x cye-lm-tag"></span>
+      </button>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      <script crossorigin="anonymous" integrity="sha256-7460qJ7p88i3YTMH/liaj1cFgX987ie+xRzl6WMjSr8=" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/frameworks-ef8eb4a89ee9f3c8b7613307fe589a8f5705817f7cee27bec51ce5e963234abf.js"></script>
+      <script async="async" crossorigin="anonymous" integrity="sha256-CXm9s4pSEWmhMcvB1kgYF4aOPzr9ntBNjTtYHu1zktE=" src="./angular.js_CONTRIBUTING.md at master · angular_angular.js_files/github-0979bdb38a521169a131cbc1d6481817868e3f3afd9ed04d8d3b581eed7392d1.js"></script>
+      
+      
+      
+    <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner hidden">
+      <span class="octicon octicon-alert cye-lm-tag"></span>
+      <span class="signed-in-tab-flash cye-lm-tag">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+      <span class="signed-out-tab-flash cye-lm-tag">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    </div>
+  
+
+
+<nav class="octotree_sidebar ui-resizable octotree_github_sidebar" style="width: 232px;">
+    <a class="octotree_toggle btn">
+      <div class="loader"></div>
+      <span class="cye-lm-tag"></span>
+
+      
+    </a>
+
+    <a class="octotree_opts" href="javascript:void(0)">
+      <span class="cye-lm-tag"></span>
+    </a>
+
+    <div class="octotree_views">
+      <div class="octotree_view octotree_treeview current">
+        <div class="octotree_view_header"></div>
+        <div class="octotree_view_body jstree jstree-1 jstree-default jstree-leaf" role="tree" tabindex="0" aria-activedescendant="j1_loading" aria-busy="false"><ul class="jstree-container-ul jstree-children jstree-wholerow-ul jstree-no-dots" role="group"></ul></div>
+      </div>
+
+      <div class="octotree_view octotree_errorview">
+        <div class="octotree_view_header"></div>
+        <form class="octotree_view_body">
+          <div class="message"></div>
+          <div>
+            <input name="token" type="text" placeholder="Paste access token here" autocomplete="off">
+          </div>
+          <div>
+            <button type="submit" class="btn">Save</button>
+            <a href="https://github.com/buunguyen/octotree#access-token" target="_blank" tabindex="-1">Why is this required?</a>
+          </div>
+          <div class="error"></div>
+        </form>
+      </div>
+
+      <div class="octotree_view octotree_optsview">
+        <div class="octotree_view_header">Settings</div>
+        <form class="octotree_view_body">
+          <div>
+            <label>Site access token</label>
+            <a class="octotree_help" href="https://github.com/buunguyen/octotree#settings" target="_blank" tabindex="-1">
+              <span class="cye-lm-tag"></span>
+            </a>
+            <input type="text" data-store="TOKEN" data-perhost="true">
+          </div>
+
+          <div>
+            <div>
+              <label>Hotkeys</label>
+            </div>
+            <input type="text" data-store="HOTKEYS">
+          </div>
+
+          <div class="octotree_github_only">
+            <div>
+              <label>GitHub Enterprise URLs</label>
+            </div>
+            <textarea data-store="GHEURLS" placeholder="https://github.mysite1.com                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   https://github.mysite2.com">            </textarea>
+          </div>
+
+          <div class="octotree_gitlab_only">
+            <div>
+              <label>GitLab Enterprise URLs</label>
+            </div>
+            <textarea data-store="GLEURLS" placeholder="https://gitlab.mysite1.com                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   https://gitlab.mysite2.com">            </textarea>
+          </div>
+          <div>
+            <label><input type="checkbox" data-store="REMEMBER"> Remember sidebar visibility</label>
+          </div>
+
+          <div>
+            <label><input type="checkbox" data-store="NONCODE"> Show in non-code pages</label>
+          </div>
+
+          <div class="octotree_github_only">
+            <label><input type="checkbox" data-store="LOADALL"> Load entire tree at once</label>
+          </div>
+
+          <div>
+            <button type="submit" class="btn">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div></nav>    <div class="facebox" id="facebox" style="display:none;">       <div class="facebox-popup">         <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">         </div>         <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">           <span class="octicon octicon-remove-close cye-lm-tag"></span>         </button>       </div>     </div></body><div id="cye-workaround-body" style="position: absolute; left: 0px; top: 0px; display: block; z-index: -2147483648; height: 6943px; width: 1045px; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(204, 232, 207);"></div><div id="cye-workaround-body-image" style="position: absolute; left: 0px; top: 0px; display: block; z-index: -2147483647; height: 6943px; width: 1045px; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0);"></div></html>
